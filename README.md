@@ -37,7 +37,7 @@
 
 **Sirius Handloom** is a fully responsive, multi-page e-commerce front-end website built for a real Sri Lankan handloom textile business founded in 2004 in Maruthamunai, Sri Lanka.
 
-The site showcases an authentic collection of 100% cotton handloom sarongs — including stripe patterns, check designs, premium weaves, and ikat diamond prints — all rendered dynamically using inline SVG fabric patterns generated entirely with JavaScript. No external product images are required.
+The site showcases an authentic collection of 100% cotton handloom sarongs, shirts, dresses, and sarees. All products feature high-quality imagery to showcase the premium craftsmanship and intricate patterns of our textiles.
 
 This is a **pure static website** (HTML + CSS + JavaScript) with no backend, no frameworks, and no build tools required.
 

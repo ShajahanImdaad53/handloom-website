@@ -53,7 +53,7 @@ function updateCartUI() {
     cartBody.innerHTML = cart.map(item => `
       <div class="cart-item">
         <div class="ci-thumb">
-          <img src="${makeSVGPattern(item.pattern, item.colors)}" 
+          <img src="${item.image}" 
                alt="${item.name}" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="ci-info">
@@ -103,7 +103,7 @@ function showToast(msg) {
 /* ─── RENDER FUNCTIONS ─── */
 
 function productCard(p, animate = '') {
-  const imgSrc = makeSVGPattern(p.pattern, p.colors);
+  const imgSrc = p.image;
   const badgeClass = p.tag === 'premium' ? 'gold' : p.tag === 'trending' ? 'teal' : '';
   const stars = '★★★★★';
   return `
@@ -144,7 +144,7 @@ function renderCategories() {
   const grid = document.getElementById('catGrid');
   if (!grid) return;
   grid.innerHTML = cats.map(c => {
-    const img = makeSVGPattern(c.product.pattern, c.product.colors);
+    const img = c.product.image;
     return `
       <div class="cat-card" onclick="window.location='shop.html'">
         <img class="cat-card-bg" src="${img}" alt="${c.name}" style="width:100%;height:100%;object-fit:cover;">
@@ -163,7 +163,7 @@ function renderFeaturedWall() {
   const grid = document.getElementById('featuredWall');
   if (!grid) return;
   grid.innerHTML = items.map(p => {
-    const img = makeSVGPattern(p.pattern, p.colors);
+    const img = p.image;
     return `
       <div class="fw-item">
         <img class="fw-fabric" src="${img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">
@@ -182,7 +182,7 @@ function renderHeroFabrics() {
   const container = document.getElementById('heroFabrics');
   if (!container) return;
   container.innerHTML = showcased.map(p => {
-    const img = makeSVGPattern(p.pattern, p.colors);
+    const img = p.image;
     return `
       <div class="hero-fabric-card">
         <img src="${img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">
@@ -202,7 +202,7 @@ function renderGallery() {
   grid.innerHTML = picks.map(id => {
     const p = PRODUCTS.find(x => x.id === id);
     if (!p) return '';
-    const img = makeSVGPattern(p.pattern, p.colors);
+    const img = p.image;
     return `
       <div class="g-item">
         <img class="g-fabric" src="${img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">
@@ -231,12 +231,52 @@ window.addEventListener('scroll', () => {
   header.style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(0,0,0,.1)' : '';
 });
 
+/* ─── THEME TOGGLE ─── */
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('sh_theme', next);
+}
+
 /* ─── INIT ─── */
 document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('sh_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  // Inject theme toggle button if not present
+  const hActions = document.querySelector('.h-actions');
+  if (hActions && !document.querySelector('button[onclick="toggleTheme()"]')) {
+    const themeBtn = document.createElement('button');
+    themeBtn.className = 'h-btn';
+    themeBtn.title = 'Toggle Theme';
+    themeBtn.innerHTML = '🌓';
+    themeBtn.onclick = toggleTheme;
+    const cartBtn = hActions.querySelector('button[onclick="toggleCart()"]');
+    if (cartBtn) hActions.insertBefore(themeBtn, cartBtn);
+    else hActions.appendChild(themeBtn);
+  }
+
   renderHeroFabrics();
   renderCategories();
   renderProducts(PRODUCTS.slice(0, 16), 'productsGrid');
   renderFeaturedWall();
   renderGallery();
   updateCartUI();
+
+  // ── Scroll Reveal Animations ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const animElements = document.querySelectorAll('.section-title, .section-sub, .product-card, .cat-card, .feature, .testi-card, .fw-item');
+  animElements.forEach(el => {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  });
 });
