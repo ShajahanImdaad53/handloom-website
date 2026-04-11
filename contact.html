@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — Sirius Handloom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-banner{background:var(--ink);padding:60px 32px;text-align:center;position:relative;overflow:hidden;}
+    .page-banner::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.02) 10px,rgba(255,255,255,.02) 20px);}
+    .page-banner .section-label{position:relative;z-index:1;color:var(--gold2);}
+    .page-banner .section-label::before,.page-banner .section-label::after{background:var(--gold2);}
+    .page-banner h1{font-family:var(--display);font-size:2.8rem;font-weight:900;color:#fff;position:relative;z-index:1;}
+    .contact-wrap{max-width:1100px;margin:0 auto;padding:60px 32px;display:grid;grid-template-columns:1fr 1.5fr;gap:48px;}
+    .contact-info h2{font-family:var(--display);font-size:1.8rem;color:var(--ink);margin-bottom:8px;}
+    .contact-info>p{color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:32px;}
+    .ci-item{display:flex;gap:14px;margin-bottom:24px;}
+    .ci-icon-box{width:44px;height:44px;background:var(--linen);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .ci-item strong{display:block;font-size:.84rem;color:var(--ink);font-weight:600;margin-bottom:3px;}
+    .ci-item p,.ci-item a{font-size:.84rem;color:var(--muted);line-height:1.6;}
+    .contact-form-box{background:var(--linen);border-radius:8px;padding:40px;}
+    .contact-form-box h3{font-family:var(--display);font-size:1.5rem;color:var(--ink);margin-bottom:24px;}
+    .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .fg label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+    .fg input,.fg textarea,.fg select{padding:12px 14px;border:1px solid var(--border);border-radius:3px;font-family:var(--body);font-size:.88rem;background:var(--white);transition:border-color .2s;}
+    .fg input:focus,.fg textarea:focus{outline:none;border-color:var(--gold);}
+    .fg textarea{height:110px;resize:vertical;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .success-msg{display:none;background:#e8f5e9;color:#2e7d32;padding:14px 16px;border-radius:3px;font-size:.86rem;margin-top:14px;}
+    @media(max-width:768px){.contact-wrap{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over LKR 5,000 <span>✦</span> Authentic Sri Lankan Handloom</div>
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html"><div class="logo-main">SIRIUS<span>HANDLOOM</span></div><div class="logo-sub">Pure Sri Lankan Craft</div></a></div>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="shop.html">Shop</a><a href="categories.html">Categories</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="h-actions">
+      <button class="h-btn" onclick="toggleCart()">🛒<span class="cart-badge">0</span></button>
+      <a href="login.html" class="btn-login">Login</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <p class="section-label">Get In Touch</p>
+  <h1>Contact Us</h1>
+</div>
+
+<div class="contact-wrap">
+  <div class="contact-info">
+    <h2>We're Here to Help</h2>
+    <p>Have questions about our handloom textiles, orders, or wholesale inquiries? Reach out — our team responds within 24 hours.</p>
+    <div class="ci-item">
+      <div class="ci-icon-box">📍</div>
+      <div><strong>Visit Us</strong><p>No. 476, Mashoor Moulana Road,<br>Maruthamunai 03, Sri Lanka.</p></div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon-box">📞</div>
+      <div><strong>Call Us</strong><a href="tel:+94754738475">+94 75 473 8475</a></div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon-box">✉️</div>
+      <div><strong>Email Us</strong><a href="mailto:info@siriushandloom.com">info@siriushandloom.com</a></div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon-box">🕐</div>
+      <div><strong>Business Hours</strong><p>Mon–Thu, Sat–Sun: 9AM–8PM<br>Friday: Closed</p></div>
+    </div>
+  </div>
+
+  <div class="contact-form-box">
+    <h3>Send a Message</h3>
+    <div class="form-row">
+      <div class="fg"><label>First Name</label><input type="text" placeholder="Your first name"/></div>
+      <div class="fg"><label>Last Name</label><input type="text" placeholder="Your last name"/></div>
+    </div>
+    <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Phone</label><input type="tel" placeholder="+94 xxx xxx xxx"/></div>
+    <div class="fg"><label>Subject</label>
+      <select>
+        <option>Product Inquiry</option><option>Order Status</option>
+        <option>Returns & Refunds</option><option>Wholesale / Bulk Orders</option><option>Other</option>
+      </select>
+    </div>
+    <div class="fg"><label>Message</label><textarea placeholder="Tell us how we can help…"></textarea></div>
+    <button class="btn-primary" style="width:100%;justify-content:center;" onclick="submitForm(this)">Send Message →</button>
+    <div class="success-msg" id="successMsg">✓ Your message has been sent! We'll be in touch shortly.</div>
+  </div>
+</div>
+
+<section class="features">
+  <div class="feature"><div class="f-icon">🚚</div><div><strong>Fast Delivery</strong><p>1–4 days within Sri Lanka</p></div></div>
+  <div class="feature"><div class="f-icon">↩️</div><div><strong>Easy Returns</strong><p>7-day money back</p></div></div>
+  <div class="feature"><div class="f-icon">🧵</div><div><strong>100% Handloom</strong><p>Authentic master-woven</p></div></div>
+  <div class="feature"><div class="f-icon">💬</div><div><strong>24/7 Support</strong><p>Always here for you</p></div></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+    <p>Handcrafted in Sri Lanka 🇱🇰</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-empty-state" id="cartEmptyState"><div class="empty-icon">🛒</div><p>Your cart is empty</p></div>
+  <div class="cart-body" id="cartBody" style="display:none;"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0</span></div>
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Checkout →</a>
+  </div>
+</div>
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+function submitForm(btn) {
+  btn.textContent = '✓ Sent!'; btn.style.background = 'var(--teal)';
+  document.getElementById('successMsg').style.display = 'block';
+  setTimeout(() => { btn.innerHTML = 'Send Message →'; btn.style.background = ''; }, 3000);
+}
+</script>
+</body>
+</html>

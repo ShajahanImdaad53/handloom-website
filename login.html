@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Sirius Handloom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .auth-page{
+      min-height:calc(100vh - 160px);display:flex;align-items:center;justify-content:center;
+      padding:60px 24px;
+      background:var(--ink);
+      position:relative;overflow:hidden;
+    }
+    .auth-page::before{
+      content:'';position:absolute;inset:0;
+      background-image:repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(255,255,255,.02) 4px,rgba(255,255,255,.02) 5px),
+        repeating-linear-gradient(90deg,transparent,transparent 4px,rgba(255,255,255,.02) 4px,rgba(255,255,255,.02) 5px);
+    }
+    .auth-glow{position:absolute;left:-200px;bottom:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,145,42,.15) 0%,transparent 65%);}
+    .auth-card{background:var(--white);border-radius:8px;width:100%;max-width:440px;overflow:hidden;position:relative;z-index:1;box-shadow:0 24px 80px rgba(0,0,0,.4);}
+    .auth-card-head{background:var(--linen);padding:28px 32px 0;border-bottom:1px solid var(--border);}
+    .auth-logo{font-family:var(--display);font-size:1.3rem;font-weight:900;color:var(--ink);margin-bottom:20px;}
+    .auth-logo span{color:var(--gold);}
+    .auth-tabs{display:flex;gap:0;}
+    .auth-tab{
+      flex:1;padding:13px;text-align:center;font-size:.78rem;font-weight:700;
+      letter-spacing:.1em;text-transform:uppercase;border:none;border-bottom:2px solid transparent;
+      background:transparent;cursor:pointer;font-family:var(--body);color:var(--muted);
+      transition:color .2s,border-color .2s;
+    }
+    .auth-tab.active{color:var(--ink);border-bottom-color:var(--gold);}
+    .auth-body{padding:32px;}
+    .auth-body h2{font-family:var(--display);font-size:1.5rem;color:var(--ink);margin-bottom:6px;}
+    .auth-body .sub{font-size:.84rem;color:var(--muted);margin-bottom:24px;}
+    .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .fg label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+    .fg input{padding:12px 14px;border:1px solid var(--border);border-radius:3px;font-family:var(--body);font-size:.9rem;transition:border-color .2s;}
+    .fg input:focus{outline:none;border-color:var(--gold);}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .form-extras{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+    .remember{display:flex;align-items:center;gap:7px;font-size:.83rem;color:var(--muted);cursor:pointer;}
+    .remember input{accent-color:var(--gold);}
+    .forgot{font-size:.8rem;color:var(--gold);cursor:pointer;font-weight:600;}
+    .auth-sep{text-align:center;margin:18px 0;color:var(--border);font-size:.8rem;position:relative;}
+    .auth-sep::before,.auth-sep::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:var(--border);}
+    .auth-sep::before{left:0;}.auth-sep::after{right:0;}
+    #registerForm{display:none;}
+  </style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over LKR 5,000 <span>✦</span> Authentic Sri Lankan Handloom</div>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html"><div class="logo-main">SIRIUS<span>HANDLOOM</span></div><div class="logo-sub">Pure Sri Lankan Craft</div></a></div>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="h-actions"><a href="login.html" class="btn-login">Login</a></div>
+  </div>
+</header>
+
+<div class="auth-page">
+  <div class="auth-glow"></div>
+  <div class="auth-card">
+    <div class="auth-card-head">
+      <div class="auth-logo">SIRIUS<span>HANDLOOM</span></div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="showTab('login',this)">Sign In</button>
+        <button class="auth-tab" onclick="showTab('register',this)">Create Account</button>
+      </div>
+    </div>
+
+    <div class="auth-body" id="loginForm">
+      <h2>Welcome Back</h2>
+      <p class="sub">Sign in to your Sirius Handloom account</p>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="fg"><label>Password</label><input type="password" placeholder="Enter your password"/></div>
+      <div class="form-extras">
+        <label class="remember"><input type="checkbox"> Remember Me</label>
+        <span class="forgot">Forgot Password?</span>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;" onclick="doLogin()">Sign In →</button>
+      <div class="auth-sep">or continue as</div>
+      <a href="index.html" class="btn-outline" style="width:100%;justify-content:center;">Guest Browsing</a>
+    </div>
+
+    <div class="auth-body" id="registerForm">
+      <h2>Create Account</h2>
+      <p class="sub">Join the Sirius Handloom community</p>
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="First name"/></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Last name"/></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="fg"><label>Password</label><input type="password" placeholder="Create a strong password"/></div>
+      <div class="fg"><label>Confirm Password</label><input type="password" placeholder="Confirm your password"/></div>
+      <div class="remember" style="margin-bottom:18px;"><input type="checkbox"> I agree to the <a href="#" style="color:var(--gold);margin-left:4px;">Terms & Conditions</a></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;" onclick="doRegister()">Create Account →</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+  </div>
+</footer>
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+function showTab(tab, el) {
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('loginForm').style.display = tab === 'login' ? 'block' : 'none';
+  document.getElementById('registerForm').style.display = tab === 'register' ? 'block' : 'none';
+}
+function doLogin() { showToast('Welcome back! Signing you in…'); setTimeout(() => window.location='index.html', 1500); }
+function doRegister() { showToast('Account created! Welcome to Sirius Handloom!'); setTimeout(() => window.location='index.html', 1800); }
+</script>
+</body>
+</html>

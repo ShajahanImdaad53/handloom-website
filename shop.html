@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop — Sirius Handloom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-banner {
+      background: var(--ink); padding: 60px 32px; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-banner::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.02) 10px, rgba(255,255,255,.02) 20px);
+    }
+    .page-banner .section-label { position: relative; z-index: 1; color: var(--gold2); }
+    .page-banner .section-label::before, .page-banner .section-label::after { background: var(--gold2); }
+    .page-banner h1 { font-family: var(--display); font-size: 2.8rem; font-weight: 900; color: #fff; position: relative; z-index: 1; }
+    .shop-layout {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 36px; max-width: 1320px; margin: 0 auto; padding: 52px 32px;
+    }
+    .filter-sidebar { height: fit-content; position: sticky; top: 90px; }
+    .filter-box {
+      border: 1px solid var(--border); border-radius: 6px;
+      overflow: hidden;
+    }
+    .filter-head {
+      background: var(--linen); padding: 16px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-head h3 { font-family: var(--display); font-size: 1.05rem; color: var(--ink); }
+    .filter-head button { background: none; border: none; color: var(--gold); font-size: .78rem; font-weight: 600; cursor: pointer; }
+    .filter-group { padding: 18px 20px; border-bottom: 1px solid var(--border); }
+    .filter-group:last-child { border-bottom: none; }
+    .filter-group h4 { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .filter-group label { display: flex; align-items: center; gap: 10px; font-size: .85rem; margin-bottom: 9px; cursor: pointer; color: var(--mid); }
+    .filter-group input[type=checkbox] { accent-color: var(--gold); width: 14px; height: 14px; }
+    .price-inputs { display: flex; gap: 8px; margin-top: 4px; }
+    .price-inputs input { flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: 3px; font-family: var(--body); font-size: .82rem; }
+    .color-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+    .swatch {
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: border-color .2s; position: relative;
+    }
+    .swatch.active, .swatch:hover { border-color: var(--gold); }
+    .shop-main-head {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 28px; flex-wrap: wrap; gap: 14px;
+    }
+    .shop-main-head p { font-size: .88rem; color: var(--muted); }
+    .sort-select {
+      padding: 10px 16px; border: 1px solid var(--border); border-radius: 3px;
+      font-family: var(--body); font-size: .83rem; color: var(--ink); background: var(--white); cursor: pointer;
+    }
+    .view-toggle { display: flex; gap: 4px; }
+    .view-btn {
+      width: 36px; height: 36px; border: 1px solid var(--border);
+      background: var(--white); border-radius: 3px; font-size: 1rem; cursor: pointer;
+    }
+    .view-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .pagination {
+      display: flex; gap: 6px; justify-content: center; padding: 48px 0 0;
+    }
+    .pg-btn {
+      width: 40px; height: 40px; border: 1px solid var(--border);
+      background: var(--white); border-radius: 3px; font-family: var(--body); font-size: .85rem; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .pg-btn.active, .pg-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    @media(max-width:900px){ .shop-layout { grid-template-columns: 1fr; } .filter-sidebar { position: static; } }
+  </style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over LKR 5,000 <span>✦</span> Authentic Sri Lankan Handloom</div>
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-main">SIRIUS<span>HANDLOOM</span></div>
+        <div class="logo-sub">Pure Sri Lankan Craft</div>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="categories.html">Categories</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="h-actions">
+      <button class="h-btn" onclick="toggleCart()">🛒<span class="cart-badge">0</span></button>
+      <a href="login.html" class="btn-login">Login</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <p class="section-label">Explore Everything</p>
+  <h1>Shop All Sarongs</h1>
+</div>
+
+<div class="shop-layout">
+  <!-- FILTERS -->
+  <aside class="filter-sidebar">
+    <div class="filter-box">
+      <div class="filter-head">
+        <h3>Filters</h3>
+        <button onclick="clearFilters()">Clear All</button>
+      </div>
+      <div class="filter-group">
+        <h4>Category</h4>
+        <label><input type="checkbox" checked> Sarong Cotton Standard</label>
+        <label><input type="checkbox"> Sarong Premium</label>
+        <label><input type="checkbox"> Home Textiles</label>
+        <label><input type="checkbox"> Gift Sets</label>
+      </div>
+      <div class="filter-group">
+        <h4>Pattern Type</h4>
+        <label><input type="checkbox" checked> Vertical Stripes</label>
+        <label><input type="checkbox" checked> Horizontal Stripes</label>
+        <label><input type="checkbox"> Check / Plaid</label>
+        <label><input type="checkbox"> Diamond / Ikat</label>
+        <label><input type="checkbox"> Woven Texture</label>
+        <label><input type="checkbox"> Bold Broad Stripe</label>
+      </div>
+      <div class="filter-group">
+        <h4>Price Range (LKR)</h4>
+        <div class="price-inputs">
+          <input type="number" placeholder="Min" value="2500">
+          <input type="number" placeholder="Max" value="4000">
+        </div>
+      </div>
+      <div class="filter-group">
+        <h4>Color Family</h4>
+        <div class="color-swatches">
+          <div class="swatch active" style="background:#87ceeb" title="Blues"></div>
+          <div class="swatch" style="background:#2d5a3d" title="Greens"></div>
+          <div class="swatch" style="background:#d4c8a8" title="Neutrals"></div>
+          <div class="swatch" style="background:#1a1a1a" title="Darks"></div>
+          <div class="swatch" style="background:#8b6347" title="Browns"></div>
+          <div class="swatch" style="background:#4a1a6b" title="Purples"></div>
+          <div class="swatch" style="background:#c8a040" title="Golds"></div>
+          <div class="swatch" style="background:#e040a0" title="Pinks"></div>
+        </div>
+      </div>
+      <div class="filter-group">
+        <button class="btn-primary" style="width:100%;justify-content:center;">Apply Filters</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- PRODUCTS -->
+  <div>
+    <div class="shop-main-head">
+      <p id="productCount">Showing <strong>20</strong> products</p>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <div class="view-toggle">
+          <button class="view-btn active" title="Grid">⊞</button>
+          <button class="view-btn" title="List">≡</button>
+        </div>
+        <select class="sort-select" onchange="sortProducts(this.value)">
+          <option value="default">Sort: Newest First</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="shopGrid"></div>
+    <div class="pagination">
+      <button class="pg-btn active">1</button>
+      <button class="pg-btn">2</button>
+      <button class="pg-btn">3</button>
+      <button class="pg-btn">→</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+    <p>Handcrafted in Sri Lanka 🇱🇰</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-empty-state" id="cartEmptyState">
+    <div class="empty-icon">🛒</div><p>Your cart is empty</p>
+    <a href="#" class="btn-primary" onclick="toggleCart()">Keep Shopping</a>
+  </div>
+  <div class="cart-body" id="cartBody" style="display:none;"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0</span></div>
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Checkout →</a>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(PRODUCTS, 'shopGrid');
+    document.getElementById('productCount').innerHTML = `Showing <strong>${PRODUCTS.length}</strong> products`;
+  });
+  function sortProducts(val) {
+    let sorted = [...PRODUCTS];
+    if (val === 'price-asc') sorted.sort((a,b) => a.rawPrice - b.rawPrice);
+    if (val === 'price-desc') sorted.sort((a,b) => b.rawPrice - a.rawPrice);
+    if (val === 'name') sorted.sort((a,b) => a.name.localeCompare(b.name));
+    renderProducts(sorted, 'shopGrid');
+  }
+  function clearFilters() {
+    document.querySelectorAll('.filter-group input[type=checkbox]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    renderProducts(PRODUCTS, 'shopGrid');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Sirius Handloom</title>
+  <meta name="description" content="Learn about Sirius Handloom — Sri Lanka's premier handloom textile brand, crafting authentic sarongs since 2004 in Maruthamunai.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-banner {
+      background: var(--ink); padding: 80px 32px; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-banner::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.02) 10px, rgba(255,255,255,.02) 20px);
+    }
+    .page-banner .section-label { position: relative; z-index: 1; color: var(--gold2); }
+    .page-banner h1 { font-family: var(--display); font-size: 3rem; font-weight: 900; color: #fff; position: relative; z-index: 1; margin-top: 12px; }
+    .about-wrap { max-width: 1000px; margin: 0 auto; padding: 72px 32px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-bottom: 80px; }
+    .about-grid.reverse { direction: rtl; }
+    .about-grid.reverse > * { direction: ltr; }
+    .about-img { border-radius: 6px; overflow: hidden; height: 380px; }
+    .about-img-fill { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h2 { font-family: var(--display); font-size: 2rem; color: var(--ink); margin-bottom: 20px; line-height: 1.25; }
+    .about-text p { color: var(--mid); line-height: 1.8; font-size: .95rem; margin-bottom: 14px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 60px 32px; background: var(--linen); }
+    .value-card { text-align: center; padding: 36px 24px; }
+    .value-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .value-card h3 { font-family: var(--display); font-size: 1.15rem; color: var(--ink); margin-bottom: 10px; }
+    .value-card p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
+    .team-section { max-width: 1000px; margin: 72px auto; padding: 0 32px; text-align: center; }
+    @media(max-width:768px){
+      .about-grid, .values-grid { grid-template-columns: 1fr; }
+      .about-grid.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over LKR 5,000 <span>✦</span> Authentic Sri Lankan Handloom <span>✦</span> 100% Cotton — Master Woven</div>
+
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-main">SIRIUS<span>HANDLOOM</span></div>
+        <div class="logo-sub">Pure Sri Lankan Craft</div>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="h-actions">
+      <button class="h-btn" onclick="toggleCart()" title="Cart">🛒<span class="cart-badge">0</span></button>
+      <a href="login.html" class="btn-login">Login</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="shop.html">Shop All</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login / Register</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <p class="section-label">Our Heritage</p>
+  <h1>About Sirius Handloom</h1>
+</div>
+
+<div class="about-wrap">
+  <div class="about-grid">
+    <div class="about-img" style="background:linear-gradient(135deg,#1a2a4a,#3a5a7a);display:flex;align-items:center;justify-content:center;">
+      <span style="font-size:6rem;">🧵</span>
+    </div>
+    <div class="about-text">
+      <h2>Woven from Tradition, Made for Today</h2>
+      <p>Founded in 2004 in the coastal town of Maruthamunai, Sirius Handloom began as a small family workshop with a passion for preserving the ancient art of Sri Lankan handloom weaving.</p>
+      <p>Over two decades, we've grown into one of the island's most trusted handloom brands — yet our heart remains in the rhythm of the loom and the hands that operate it.</p>
+      <p>Every sarong we create carries the spirit of our artisans — men and women who have dedicated their lives to mastering a craft passed down through generations.</p>
+    </div>
+  </div>
+
+  <div class="about-grid reverse">
+    <div class="about-img" style="background:linear-gradient(135deg,#4a1a6b,#8b3a9a);display:flex;align-items:center;justify-content:center;">
+      <span style="font-size:6rem;">🌿</span>
+    </div>
+    <div class="about-text">
+      <h2>Our Commitment to Craftsmanship</h2>
+      <p>We source only the finest 100% pure cotton yarns, dyed with vibrant, long-lasting colors. Every thread is hand-selected, every pattern hand-designed, and every sarong hand-woven on traditional pit looms.</p>
+      <p>No two pieces are exactly alike — that's not a flaw, it's the beauty of authentic handloom. When you own a Sirius sarong, you own a piece of living heritage.</p>
+      <a href="shop.html" class="btn-primary" style="display:inline-flex;margin-top:20px;">Shop Our Collection →</a>
+    </div>
+  </div>
+</div>
+
+<div class="values-grid">
+  <div class="value-card">
+    <div class="value-icon">🏺</div>
+    <h3>Authentic Heritage</h3>
+    <p>Every pattern draws from centuries of Sri Lankan weaving tradition, adapted for modern taste without losing its soul.</p>
+  </div>
+  <div class="value-card">
+    <div class="value-icon">🌍</div>
+    <h3>Shipped Worldwide</h3>
+    <p>We deliver to over 50 countries, sharing the beauty of Sri Lankan handloom with the world — from London to Kuala Lumpur.</p>
+  </div>
+  <div class="value-card">
+    <div class="value-icon">🤝</div>
+    <h3>Artisan First</h3>
+    <p>We pay our weavers fairly, invest in their wellbeing, and ensure every craftsperson behind your sarong thrives.</p>
+  </div>
+</div>
+
+<section class="team-section">
+  <div class="section-head">
+    <p class="section-label">Our Numbers</p>
+    <h2 class="section-title">Two Decades of Craft</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;">
+    <div style="text-align:center;padding:28px;border:1px solid var(--border);border-radius:6px;">
+      <div style="font-family:var(--display);font-size:2.5rem;color:var(--gold);font-weight:900;">20+</div>
+      <div style="color:var(--muted);font-size:.85rem;margin-top:6px;">Years of Weaving</div>
+    </div>
+    <div style="text-align:center;padding:28px;border:1px solid var(--border);border-radius:6px;">
+      <div style="font-family:var(--display);font-size:2.5rem;color:var(--gold);font-weight:900;">500+</div>
+      <div style="color:var(--muted);font-size:.85rem;margin-top:6px;">Unique Patterns</div>
+    </div>
+    <div style="text-align:center;padding:28px;border:1px solid var(--border);border-radius:6px;">
+      <div style="font-family:var(--display);font-size:2.5rem;color:var(--gold);font-weight:900;">50+</div>
+      <div style="color:var(--muted);font-size:.85rem;margin-top:6px;">Countries Shipped</div>
+    </div>
+    <div style="text-align:center;padding:28px;border:1px solid var(--border);border-radius:6px;">
+      <div style="font-family:var(--display);font-size:2.5rem;color:var(--gold);font-weight:900;">100%</div>
+      <div style="color:var(--muted);font-size:.85rem;margin-top:6px;">Pure Cotton</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+    <p>Handcrafted in Sri Lanka 🇱🇰</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-empty-state" id="cartEmptyState">
+    <div class="empty-icon">🛒</div><p>Your cart is empty</p>
+    <a href="shop.html" class="btn-primary" onclick="toggleCart()">Start Shopping</a>
+  </div>
+  <div class="cart-body" id="cartBody" style="display:none;"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0</span></div>
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Checkout →</a>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

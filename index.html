@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sirius Handloom — Pure Sri Lankan Handloom Textiles</title>
+  <meta name="description" content="Discover handcrafted Sri Lankan handloom sarongs, woven by master artisans. Authentic cotton textiles, vibrant patterns, shipped worldwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  Free shipping on orders over LKR 5,000
+  <span>✦</span>
+  Authentic Sri Lankan Handloom
+  <span>✦</span>
+  100% Cotton — Master Woven
+</div>
+
+<!-- HEADER -->
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-main">SIRIUS<span>HANDLOOM</span></div>
+        <div class="logo-sub">Pure Sri Lankan Craft</div>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="h-actions">
+      <button class="h-btn" onclick="toggleSearch()" title="Search">🔍</button>
+      <button class="h-btn" onclick="toggleCart()" title="Cart">
+        🛒<span class="cart-badge">0</span>
+      </button>
+      <a href="login.html" class="btn-login">Login</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="shop.html">Shop All</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login / Register</a>
+  </div>
+  <div class="search-wrap" id="searchWrap">
+    <input type="text" placeholder="Search sarongs, patterns, colors…"/>
+    <button>Search</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <p class="hero-tag">New Collection 2025</p>
+      <h1>
+        Handcrafted<br>
+        Elegance,<br>
+        <em>Woven for You</em>
+      </h1>
+      <p>Pure Sri Lankan handloom sarongs woven by master artisans using century-old techniques. Every thread, a story of heritage and pride.</p>
+      <div class="hero-btns">
+        <a href="shop.html" class="btn-primary">Shop Collection →</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-right" id="heroFabrics">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Unique Patterns</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">20+</span>
+      <span class="stat-label">Years Crafting</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Pure Cotton</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">50+</span>
+      <span class="stat-label">Countries Shipped</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="feature">
+    <div class="f-icon">🚚</div>
+    <div><strong>Fast Delivery</strong><p>1–4 days within Sri Lanka</p></div>
+  </div>
+  <div class="feature">
+    <div class="f-icon">↩️</div>
+    <div><strong>Easy Returns</strong><p>7-day money back</p></div>
+  </div>
+  <div class="feature">
+    <div class="f-icon">🧵</div>
+    <div><strong>100% Handloom</strong><p>Authentic master-woven</p></div>
+  </div>
+  <div class="feature">
+    <div class="f-icon">💬</div>
+    <div><strong>24/7 Support</strong><p>Always here for you</p></div>
+  </div>
+</section>
+
+<!-- CATEGORY BAND -->
+<section class="cat-band">
+  <div class="section-head">
+    <p class="section-label">Browse by Type</p>
+    <h2 class="section-title">Shop by Category</h2>
+    <p class="section-sub">Discover our curated collections of handwoven Sri Lankan textiles</p>
+  </div>
+  <div class="cat-grid" id="catGrid">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Sirius Handloom</span>
+    <span>Pure Sri Lankan Cotton</span>
+    <span>Master Woven Sarongs</span>
+    <span>Check Patterns</span>
+    <span>Stripe Collections</span>
+    <span>Premium Weaves</span>
+    <span>Handcrafted Heritage</span>
+    <span>Vibrant Colors</span>
+    <span>Sirius Handloom</span>
+    <span>Pure Sri Lankan Cotton</span>
+    <span>Master Woven Sarongs</span>
+    <span>Check Patterns</span>
+    <span>Stripe Collections</span>
+    <span>Premium Weaves</span>
+    <span>Handcrafted Heritage</span>
+    <span>Vibrant Colors</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div class="section-head">
+    <p class="section-label">Discover Our Collection</p>
+    <h2 class="section-title">Find Your Perfect Style</h2>
+    <p class="section-sub">Handwoven with love — each sarong is a unique work of art</p>
+  </div>
+  <div class="tab-bar">
+    <button class="tab-pill active" onclick="switchTab(this,'all')">All Products</button>
+    <button class="tab-pill" onclick="switchTab(this,'new')">New Arrivals</button>
+    <button class="tab-pill" onclick="switchTab(this,'featured')">Featured</button>
+    <button class="tab-pill" onclick="switchTab(this,'premium')">Premium</button>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Rendered by JS -->
+  </div>
+  <div class="center" style="padding:48px 0 0;">
+    <a href="shop.html" class="btn-outline">View All Products →</a>
+  </div>
+</section>
+
+<!-- FEATURED WALL -->
+<section class="featured-wall">
+  <div class="section-head" style="padding-bottom:32px;">
+    <p class="section-label">This Week's Picks</p>
+    <h2 class="section-title">Featured Handloom Wall</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.4)">Our editors' top selections — extraordinary patterns, timeless elegance</p>
+  </div>
+  <div class="fw-grid" id="featuredWall">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-band">
+  <div class="section-head">
+    <p class="section-label">Customer Love</p>
+    <h2 class="section-title">What Our Customers Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Absolutely beautiful sarong — the colors are vibrant and the weave quality is incredible. You can feel the craftsmanship in every thread. Will definitely order more!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div><strong>Amara Perera</strong><span>Colombo, Sri Lanka</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Ordered 3 sarongs as gifts — they arrived beautifully packaged and were better than described. The dark navy and golden stripe one is absolutely stunning in person.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div><strong>James Thornton</strong><span>London, UK</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The check pattern sarong exceeded all expectations. Fast shipping, genuine handloom quality, and the pattern colors are so rich. Supporting local artisans feels wonderful too!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div><strong>Siti Rahman</strong><span>Kuala Lumpur, Malaysia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="section-head">
+    <p class="section-label">Our Fabric Gallery</p>
+    <h2 class="section-title">Every Thread, A Story</h2>
+    <p class="section-sub">A glimpse into our weaving traditions — follow us @siriushandloom</p>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="section-label">Stay Connected</div>
+  <h2 class="section-title">Join the Sirius Community</h2>
+  <p>Get early access to new collections, exclusive offers, and handloom stories.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="Your email address…"/>
+    <button onclick="subscribeNewsletter(this)">Subscribe</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col f-brand">
+      <div class="f-logo">SIRIUS<span>HANDLOOM</span></div>
+      <p>Pure Sri Lankan handloom textiles, woven from our looms to your home. Crafted with love in Maruthamunai since 2004.</p>
+      <div class="f-socials">
+        <a href="#">FB</a><a href="#">IG</a><a href="#">TW</a><a href="#">YT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Your Account</h4>
+      <ul>
+        <li><a href="login.html">Sign Up</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Track Orders</a></li>
+        <li><a href="#">Wishlist</a></li>
+        <li><a href="shop.html">Browse All</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Talk To Us</h4>
+      <p>Got Questions? Call us</p>
+      <p><strong><a href="tel:+94754738475" style="color:rgba(255,255,255,.7)">+94 75 473 8475</a></strong></p>
+      <p><a href="mailto:info@siriushandloom.com">info@siriushandloom.com</a></p>
+      <p style="margin-top:10px;">No. 476, Mashoor Moulana Road,<br>Maruthamunai 03, Sri Lanka.</p>
+    </div>
+  </div>
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+    <p>Handcrafted in Sri Lanka 🇱🇰</p>
+  </div>
+</footer>
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Cart <span class="cart-count-text"></span></h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-empty-state" id="cartEmptyState">
+    <div class="empty-icon">🛒</div>
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="btn-primary" onclick="toggleCart()">Start Shopping</a>
+  </div>
+  <div class="cart-body" id="cartBody" style="display:none;"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">LKR 0</span>
+    </div>
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Checkout →</a>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+  function subscribeNewsletter(btn) {
+    btn.textContent = '✓ Subscribed!';
+    btn.style.background = '#2a7a78';
+    setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  }
+</script>
+</body>
+</html>

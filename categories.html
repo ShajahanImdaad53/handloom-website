@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories — Sirius Handloom</title>
+  <meta name="description" content="Browse all categories of handloom sarongs at Sirius Handloom — cotton standards, premium weaves, check patterns, stripe collections, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-banner {
+      background: var(--ink); padding: 80px 32px; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-banner::after {
+      content:'';position:absolute;inset:0;
+      background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.02) 10px,rgba(255,255,255,.02) 20px);
+    }
+    .page-banner .section-label{position:relative;z-index:1;color:var(--gold2);}
+    .page-banner h1{font-family:var(--display);font-size:3rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-top:12px;}
+    .cat-page-wrap{max-width:1200px;margin:0 auto;padding:72px 32px;}
+    .cat-big-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:60px;}
+    .cat-big-card{
+      position:relative;overflow:hidden;border-radius:6px;height:280px;cursor:pointer;
+      display:flex;align-items:flex-end;
+      transition:transform .3s;
+    }
+    .cat-big-card:hover{transform:translateY(-4px);}
+    .cat-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .cat-inner-overlay{
+      position:relative;z-index:2;width:100%;padding:28px;
+      background:linear-gradient(transparent,rgba(0,0,0,.75));
+    }
+    .cat-big-card .c-tag{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px;}
+    .cat-big-card h3{font-family:var(--display);font-size:1.5rem;color:#fff;margin-bottom:6px;}
+    .cat-big-card p{font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:16px;}
+    .cat-big-card a{
+      display:inline-block;padding:9px 22px;
+      background:var(--gold);color:var(--ink);font-size:.8rem;font-weight:700;
+      border-radius:3px;letter-spacing:.04em;text-decoration:none;
+    }
+    .cat-small-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+    .cat-small-card{
+      border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:pointer;
+      transition:box-shadow .25s, transform .25s;
+    }
+    .cat-small-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.10);transform:translateY(-3px);}
+    .cat-small-card .csm-img{height:140px;background:var(--linen);display:flex;align-items:center;justify-content:center;font-size:3rem;}
+    .cat-small-card .csm-body{padding:16px;}
+    .cat-small-card h4{font-family:var(--display);font-size:1rem;color:var(--ink);margin-bottom:4px;}
+    .cat-small-card p{font-size:.78rem;color:var(--muted);}
+    @media(max-width:900px){.cat-big-grid{grid-template-columns:1fr;}.cat-small-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.cat-small-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over LKR 5,000 <span>✦</span> Authentic Sri Lankan Handloom <span>✦</span> 100% Cotton — Master Woven</div>
+
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-main">SIRIUS<span>HANDLOOM</span></div>
+        <div class="logo-sub">Pure Sri Lankan Craft</div>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html" class="active">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="h-actions">
+      <button class="h-btn" onclick="toggleCart()" title="Cart">🛒<span class="cart-badge">0</span></button>
+      <a href="login.html" class="btn-login">Login</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="shop.html">Shop All</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login / Register</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <p class="section-label">Browse by Type</p>
+  <h1>Shop by Category</h1>
+</div>
+
+<div class="cat-page-wrap">
+  <div class="section-head" style="margin-bottom:40px;">
+    <p class="section-label">Featured Collections</p>
+    <h2 class="section-title">Our Main Collections</h2>
+    <p class="section-sub">Discover curated handloom families — each crafted with distinct patterns and character</p>
+  </div>
+
+  <div class="cat-big-grid" id="bigCatGrid">
+    <!-- rendered by JS -->
+  </div>
+
+  <div class="section-head" style="margin-bottom:36px;">
+    <p class="section-label">Explore More</p>
+    <h2 class="section-title">By Pattern Type</h2>
+  </div>
+
+  <div class="cat-small-grid">
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">🏮</div>
+      <div class="csm-body">
+        <h4>Vertical Stripes</h4>
+        <p>Classic precision-lined sarongs</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">〰️</div>
+      <div class="csm-body">
+        <h4>Horizontal Stripes</h4>
+        <p>Bold and breezy horizontal flows</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">⊞</div>
+      <div class="csm-body">
+        <h4>Check & Plaid</h4>
+        <p>Vivid multi-color check patterns</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">◇</div>
+      <div class="csm-body">
+        <h4>Diamond / Ikat</h4>
+        <p>Traditional ikat diamond weaves</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">🌐</div>
+      <div class="csm-body">
+        <h4>Woven Texture</h4>
+        <p>Rich tactile weave patterns</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">▬</div>
+      <div class="csm-body">
+        <h4>Bold Broad Stripe</h4>
+        <p>Statement-making broad bands</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">⋮</div>
+      <div class="csm-body">
+        <h4>Pin Stripe</h4>
+        <p>Fine, elegant pinstripe detailing</p>
+      </div>
+    </div>
+    <div class="cat-small-card" onclick="window.location='shop.html'">
+      <div class="csm-img">🎨</div>
+      <div class="csm-body">
+        <h4>Multi-Color Check</h4>
+        <p>Vibrant mosaic check designs</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;">
+    <p>© 2025 All Rights Reserved — <strong>SIRIUS HANDLOOM</strong></p>
+    <p>Handcrafted in Sri Lanka 🇱🇰</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart</h3><button onclick="toggleCart()">✕</button></div>
+  <div class="cart-empty-state" id="cartEmptyState">
+    <div class="empty-icon">🛒</div><p>Your cart is empty</p>
+    <a href="shop.html" class="btn-primary" onclick="toggleCart()">Start Shopping</a>
+  </div>
+  <div class="cart-body" id="cartBody" style="display:none;"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0</span></div>
+    <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Checkout →</a>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cats = [
+      { gradient: 'linear-gradient(135deg,#1a2a4a,#3a5a7a)', emoji: '🧵', tag: 'Best Sellers', name: 'Cotton Standard Sarongs', desc: 'Our flagship range — 100% handloom cotton sarongs in 15+ patterns, priced for everyone.', count: '15+ styles', products: PRODUCTS.filter(p => p.cat === 'Sarong Cotton Standard') },
+      { gradient: 'linear-gradient(135deg,#4a1a6b,#8b6347)', emoji: '✨', tag: 'Premium', name: 'Premium Weaves', desc: 'Hand-picked luxury sarongs in diamond ikat, traditional weave, and festive editions.', count: '5+ styles', products: PRODUCTS.filter(p => p.cat === 'Sarong Premium') },
+      { gradient: 'linear-gradient(135deg,#1a5a3a,#2d8a5a)', emoji: '⊞', tag: 'Trending', name: 'Check & Plaid Collection', desc: 'Bold, vibrant multi-color check patterns for those who love to make a statement.', count: '3+ styles', products: PRODUCTS.filter(p => p.pattern === 'check' || p.pattern === 'multicheck') },
+      { gradient: 'linear-gradient(135deg,#8b1a1a,#c8a040)', emoji: '🏮', tag: 'Popular', name: 'Stripe Collections', desc: 'Classic vertical and horizontal stripe sarongs — timeless, elegant, and always in style.', count: '10+ styles', products: PRODUCTS.filter(p => p.pattern === 'vstripe' || p.pattern === 'hstripe' || p.pattern === 'boldstripe') },
+    ];
+    const grid = document.getElementById('bigCatGrid');
+    grid.innerHTML = cats.map(c => `
+      <div class="cat-big-card" onclick="window.location='shop.html'" style="background:${c.gradient};">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.15;">${c.emoji}</div>
+        <div class="cat-inner-overlay">
+          <p class="c-tag">${c.tag} · ${c.count}</p>
+          <h3>${c.name}</h3>
+          <p>${c.desc}</p>
+          <a href="shop.html">Browse →</a>
+        </div>
+      </div>
+    `).join('');
+    updateCartUI();
+  });
+</script>
+</body>
+</html>
