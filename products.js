@@ -66,7 +66,7 @@ const PRODUCTS = [
   },
   {
     id: 12, name: "Premium Handmade Ivory Lace Dress", fullName: "Premium Hand Woven Dress — Ivory Lace Wrap",
-    cat: "Handloom Dresses", price: "LKR 6,800", rawPrice: 6800, image: "images/dress_4.jpg",
+    cat: "Handloom Dresses", price: "LKR 6,800", rawPrice: 6800, image: "images/dress_5.jpg",
     badge: "Classic", tag: "popular"
   },
 
