@@ -145,7 +145,7 @@ const PRODUCTS = [
   },
   {
     id: 16, name: "Ruby Red Silk Artisan Saree", fullName: "Premium Hand Made Saree — Ruby Red Silk",
-    cat: "Handloom Sarees", price: "LKR 12,450", rawPrice: 12450, image: "https://images.unsplash.com/photo-1610189014605-e47852deeb44?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    cat: "Handloom Sarees", price: "LKR 12,450", rawPrice: 12450, image: "images/premium_hero_sarong.png",
     badge: "Premium", tag: "premium"
   }
 ];
