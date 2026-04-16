@@ -136,8 +136,8 @@ function renderProducts(list, containerId) {
 
 function renderCategories() {
   const cats = [
-    { name: 'Cotton Sarongs', count: '40+ styles', product: PRODUCTS[5] },
-    { name: 'Check Patterns', count: '15+ styles', product: PRODUCTS[12] },
+    { name: 'Cotton Sarongs', count: '40+ styles', product: PRODUCTS[1] },
+    { name: 'Check Patterns', count: '15+ styles', product: PRODUCTS[4] },
     { name: 'Stripe Collection', count: '25+ styles', product: PRODUCTS[0] },
     { name: 'Premium Weaves', count: '10+ styles', product: PRODUCTS[15] },
   ];
@@ -159,7 +159,7 @@ function renderCategories() {
 }
 
 function renderFeaturedWall() {
-  const items = [PRODUCTS[12], PRODUCTS[5], PRODUCTS[15], PRODUCTS[7], PRODUCTS[17]];
+  const items = [PRODUCTS[6], PRODUCTS[1], PRODUCTS[10], PRODUCTS[7], PRODUCTS[15]];
   const grid = document.getElementById('featuredWall');
   if (!grid) return;
   grid.innerHTML = items.map(p => {
@@ -178,7 +178,7 @@ function renderFeaturedWall() {
 }
 
 function renderHeroFabrics() {
-  const showcased = [PRODUCTS[5], PRODUCTS[12], PRODUCTS[17]];
+  const showcased = [PRODUCTS[0], PRODUCTS[6], PRODUCTS[10]];
   const container = document.getElementById('heroFabrics');
   if (!container) return;
   container.innerHTML = showcased.map(p => {
@@ -198,7 +198,7 @@ function renderHeroFabrics() {
 function renderGallery() {
   const grid = document.getElementById('galleryGrid');
   if (!grid) return;
-  const picks = [1,5,12,3,8,14,9,11,6,15];
+  const picks = [1,2,7,5,8,14,15,11,4,13];
   grid.innerHTML = picks.map(id => {
     const p = PRODUCTS.find(x => x.id === id);
     if (!p) return '';

@@ -403,6 +403,9 @@ nav.nav a:hover, nav.nav a.active {
 }
 .prod-fabric {
   width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%; /* Shift up to hide bottom address/QR */
+  transform: scale(1.35); /* Zoom in to hide sidebar banners and logo */
   transition: transform .5s ease;
   display: block;
 }
@@ -490,12 +493,16 @@ nav.nav a:hover, nav.nav a.active {
   aspect-ratio: .8; border-radius: var(--radius-lg);
 }
 .fw-item:first-child { aspect-ratio: unset; grid-row: span 2; }
+.fw-item:hover .fw-overlay { opacity: 1; }
 .fw-fabric {
   width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: scale(1.35);
   transition: transform .6s ease;
   display: block; min-height: 200px;
 }
-.fw-item:hover .fw-fabric { transform: scale(1.08); }
+.fw-item:hover .fw-fabric { transform: scale(1.45); }
 .fw-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,.75) 0%, transparent 55%);
