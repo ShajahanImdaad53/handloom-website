@@ -68,7 +68,64 @@ const PRODUCTS = [
     badge: "New", tag: "new"
   },
 
-  // ── SHIRTS ──
+  // ── ADDITIONAL SARONGS ──
+  {
+    id: 17, name: "Classic Handloom Sarong Design 1", fullName: "Handloom Cotton Sarong — Classic Design 1",
+    cat: "Handloom Sarongs", price: "LKR 3,200", rawPrice: 3200, image: "images/sarong_1.png",
+    badge: "New Collection", tag: "new"
+  },
+  {
+    id: 18, name: "Elegant Handloom Sarong Design 2", fullName: "Handloom Cotton Sarong — Elegant Design 2",
+    cat: "Handloom Sarongs", price: "LKR 3,200", rawPrice: 3200, image: "images/sarong_2.png",
+    badge: "New Collection", tag: "new"
+  },
+  {
+    id: 19, name: "Traditional Handloom Sarong Design 3", fullName: "Handloom Cotton Sarong — Traditional Design 3",
+    cat: "Handloom Sarongs", price: "LKR 3,200", rawPrice: 3200, image: "images/sarong_3.jpg",
+    badge: "New Collection", tag: "new"
+  },
+  {
+    id: 20, name: "Artisan Handloom Sarong Design 4", fullName: "Handloom Cotton Sarong — Artisan Design 4",
+    cat: "Handloom Sarongs", price: "LKR 3,200", rawPrice: 3200, image: "images/sarong_4.jpg",
+    badge: "New Collection", tag: "new"
+  },
+  {
+    id: 21, name: "Heritage Handloom Sarong 1", fullName: "Handloom Cotton Sarong — Heritage Collection 1",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong1.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+  {
+    id: 22, name: "Heritage Handloom Sarong 5", fullName: "Handloom Cotton Sarong — Heritage Collection 5",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong5.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+  {
+    id: 23, name: "Heritage Handloom Sarong 6", fullName: "Handloom Cotton Sarong — Heritage Collection 6",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong6.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+  {
+    id: 24, name: "Heritage Handloom Sarong 7", fullName: "Handloom Cotton Sarong — Heritage Collection 7",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong7.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+  {
+    id: 25, name: "Heritage Handloom Sarong 8", fullName: "Handloom Cotton Sarong — Heritage Collection 8",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong8.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+  {
+    id: 26, name: "Heritage Handloom Sarong 9", fullName: "Handloom Cotton Sarong — Heritage Collection 9",
+    cat: "Handloom Sarongs", price: "LKR 3,300", rawPrice: 3300, image: "images/Sarong9.jpeg",
+    badge: "Heritage", tag: "popular"
+  },
+
+  // ── ADDITIONAL SHIRTS ──
+  {
+    id: 27, name: "Premium Hand Made Casual Shirt", fullName: "Premium Hand Made Shirt — Casual Collection",
+    cat: "Handloom Shirts", price: "LKR 3,850", rawPrice: 3850, image: "images/shirt_5.jpg",
+    badge: "New", tag: "new"
+  },
   {
     id: 13, name: "Premium Hand Made Beige Check Shirt", fullName: "Premium Hand Made Shirt — Beige Check Casual",
     cat: "Handloom Shirts", price: "LKR 3,850", rawPrice: 3850, image: "images/shirt_1.png",
